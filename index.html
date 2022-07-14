@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>PharmaCode</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+</head>
+
+<body><nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="index.html">Pharma Code</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Welcome</a></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image:url('assets/img/home-bg.png');">
+        <div class="overlay"></div>
+
+        <div class="container">
+            <div class="row">                
+		<div class="col-md-10 col-lg-8 mx-auto position-relative">
+                    <div class="site-heading">
+                        <h1>PHARMA CODE</h1><span class="subheading">UNIQUE ID + QR CODE GENERATOR</span>
+				
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+       			 <center><h2>Unique ID Generated is :</h2><h3 id="s1" onclick="copyEvent('s1')"></h3>
+
+<script>
+	var today = new Date();
+		var date = today.getFullYear()+''+(today.getMonth()+1)+''+today.getDate();
+			var time = today.getHours() + "" + today.getMinutes() + "" + today.getSeconds();
+		var dateTime = date+''+time;
+	document.getElementById("s1").innerHTML= String(dateTime);
+</script>
+
+<script>
+    function copyEvent(id)
+   	 {
+        	var str = document.getElementById(id);
+        		window.getSelection().selectAllChildren(str);
+        			document.execCommand("Copy")
+		alert("The unique ID copied is : "+ dateTime);
+    	}
+</script>
+
+<div class="container-fluid">
+	<div class="text-center">
+	<div class="form-horizontal">
+	<div class="form-group">
+		<label class="control-label col-sm-4" for="content">
+		</label>
+		<center><div class="col-sm-5">	
+		</div>
+	</center></div>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-100">
+
+			<center><button type="button" class="btn btn-primary" id="generate">Generate QR Code</button></center>
+
+</div>
+
+<br>
+	<img src="https://chart.googleapis.com/chart?cht=qr&amp;chl=Click+On+Generate+QR+Code&amp;chs=160x160&amp;chld=L|0" class="qr-code img-thumbnail img-responsive">
+	</div><br>
+	
+	<center><button type="button" class="btn btn-primary" id="new_id" onclick="window.location.reload();">Generate a New Unique Id</button></center>
+	
+			</div>
+		</div>
+	</div>
+</center></div>
+
+		<script src="https://code.jquery.com/jquery-3.5.1.js">
+		</script>
+
+<script>
+
+	function htmlEncode(value) {
+	return $('<div/>').text(value)
+		.html();
+	}
+
+	$(function () {
+
+	$('#generate').click(function () {
+document.getElementById("s1").value=dateTime;
+		let finalURL =
+				'https://chart.googleapis.com/chart?cht=qr&chl=' +
+		htmlEncode($('#s1').val()) +
+		'&chs=160x160&chld=L|0'
+		$('.qr-code').attr('src', finalURL);
+	});
+	});
+</script>
+    
+    <footer>
+    
+                    <p class="text-muted copyright">Copyright&nbsp;©&nbsp;Pharma Code 2022</p>
+              
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/clean-blog.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/clean-blog.js"></script>
+</body>
+
+</html>
